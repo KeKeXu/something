@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/all.css"/>
+		<style>
+			body{
+				width: 100%;
+				height: 100%;
+			}
+			.text_center{
+				margin: 0 auto;
+				color: white;
+				text-align: center;
+				line-height: 33px;
+			}
+			
+			#container,#meng,#bg{
+				overflow: hidden;
+				width: 100%;
+				height:100%;/*需用js改变*/
+				
+			}
+			#menu{
+				width:38px;
+				height: 38px;
+				background: rgb(255, 15, 101);
+				float: right;
+				margin-top: 30px;
+				margin-right:30px;
+				border-radius: 19px;
+			}
+			#menu ul{
+				margin-top: 10px;
+			}
+			#menu ul li{
+				width: 22.9px;
+				height: 3px;
+				background: white;
+				margin: 0 auto;
+				margin-top: 5px;
+			}
+			#logo{
+				margin-top: 30px;
+				margin-left:30px;
+				width:80px;
+				height: 50px;
+				border-radius: 2px;
+				background: rgba(255, 15, 101,0.7);
+				color: white;
+				line-height: 25px;
+   				
+
+				}
+			#logo>span{
+				border-bottom: 1px solid;
+			}		
+			#nei{
+				width: 1104px;
+				height: 359px;
+				margin-top: 20%;/*待改*/
+			}
+			section{
+				position: relative;
+			}
+			section>div>span{
+				background: rgba(255,255,255,0.7);	
+			}
+			section>h1{
+				position: absolute;	
+				top: 150px;
+				left: 30%;		
+				font-family: 'Rouge Script', cursive;
+				font-size:80px;
+			    color: #fff;
+			    letter-spacing: 1px;
+			    word-spacing: 6px;
+			    text-shadow: -5px -5px #000;
+			}
+			section>div{
+				width: 50%;
+				height: 70px;/*待改*/
+				float: left;
+				overflow: hidden;
+				position: relative;
+			}
+			/*需做动画*/	
+			section .btn{
+				width: 33px;
+				height: 33px;
+				background: rgb(255, 15, 101);
+				border-radius: 16.5px;
+				font-weight: 200;
+				margin-top: 18.5px;
+			}
+			section .btn:hover{
+				background: #05D6AC;
+			}
+			section .btn_left{
+				margin-left:71px;
+			}
+			section .btn_right{
+				float: right;
+				margin-right:71px;
+			}
+			.blur-box ul{
+				position: relative;
+				z-index: 15;
+				height: 100%;
+			}
+			.blur-box ul li{
+				height: 17%;
+			}
+			/*多页面*/
+			.page{
+				display: none;
+			}
+			/*蒙版*/
+			#meng,#bg{
+				position: absolute;
+				left: 0;
+				top: 0;
+				background: rgba(0,0,0,0.5);
+				z-index: -5;
+			}
+			#bg{
+				width: 100%;
+				height: 100%;
+				z-index: -6;
+				overflow: hidden;
+				background-size: 100%;
+				background-repeat:no-repeat;
+			}
+			#bg>div{
+				width:12.5%;
+				height: 100%;
+				position: absolute;
+			}
+			.hid{
+				display:none;
+			}
+			/*动画*/
+			
+			.lines{
+				float: none;
+				position: absolute;
+				top: 100px;
+			}
+			
+			.one{
+				width: 30%;/**/
+				height: 8px;
+				left: 8px;
+				
+			}
+			.two{
+				width: 8px;
+				height: 140px;
+				
+			}
+			.three{
+				width: 50%;
+				height: 8px;
+				top: 240px;
+			}
+			.four{
+				width: 50%;
+				height: 8px;
+				
+			}
+			.five{
+				width: 8px;
+				height: 132px;
+				top: 108px;
+			}
+			.six{
+				width: 30%;/**/
+				height: 8px;
+				top: 240px;
+			}
+			.right{
+				right: 0px;
+			}
+			.lines span{
+				width: 100%;
+				height: 100%;
+				display: block;
+				background: rgba(255,255,255,0.5);
+			}
+			@-moz-keyframes wid{
+				0%{
+					width:0;
+				}
+				100%{
+					width: 100%;
+				}
+			}
+			@-ms-keyframes wid{
+				0%{
+					width:0;
+				}
+				100%{
+					width: 100%;
+				}
+			}
+			@-webkit-keyframes wid{
+				0%{
+					width:0;
+				}
+				100%{
+					width: 100%;
+				}
+			}
+			.Animater{
+				animation: 1s wid;
+			}
+			@-webkit-keyframes scale{
+							
+				    0%{
+				    	
+				      background-size: 100%;
+				        
+				    }
+
+				    50%{
+				         background-size: 105%;
+
+				    }
+				    100%{
+						
+				         background-size: 100%;
+				      
+				    }
+				   
+				0%{
+					background-size: 100%;
+				}
+			}
+		</style>
+		<script type="text/javascript" src="js/jquery-1.8.0.js"></script>
+	</head>
+	<body>
+		<div id="container">
+		<div id="menu">
+				<ul>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+			<div id="logo">
+				<span>xK</span><br/>
+				<span>个人简历</span>
+			</div>
+			<!--改变class为背景的内容-->
+			<div id="nei" class="text_center">
+				<!--改变selection的内容-->
+				<section class="text_center" >
+					<h1>choose me</h1>
+					<!--按钮-->
+					<div>
+						<div id="btn" class="btn btn_left"><h1><</h1></div>
+					</div>
+					<div>
+						<div id="btn1" class="btn btn_right"><h1>></h1></div>
+					</div>
+					<div style="clear: both;height: 0px;"></div>
+					<div class="lines one">
+						<span></span>
+					</div>
+					<div class="lines two">
+						<span class="vertical"></span>
+					</div>
+					<div class="lines three">
+						<span></span>
+					</div>
+					
+					
+					
+					
+					
+					<div class="lines right four">
+						<span style="float: right;"></span>
+					</div>
+					<div class="lines right five">
+						<span class="vertical"></span>
+					</div>
+					<div  class="lines right six">
+						<span  style="float: right;"></span>
+					</div>
+					<!--动态线条-->
+					
+				</section>
+				<section class="box2 blur-container blur-8 justify-content-center align-items-center">
+			<div class="blur-box">
+				<ul>
+					
+					<div class="lines one">
+						<span></span>
+					</div>
+					<div class="lines two">
+						<span class="vertical"></span>
+					</div>
+					<div class="lines three">
+						<span></span>
+					</div>
+					<div class="lines right four">
+						<span style="float: right;"></span>
+					</div>
+					<div class="lines right five">
+						<span class="vertical"></span>
+					</div>
+					<div  class="lines right six">
+						<span  style="float: right;"></span>
+					</div>
+					<li><a href="javascript:move()">首页</a></li>
+					<li><a href="javascript:move()">关于我</a></li>
+					<li><a href="javascript:move()">我的项目</a></li>
+					<li><a href="javascript:move()">作品集</a></li>
+					<li><a href="javascript:move()">技术掌握</a></li>
+					<li><a href="javascript:move()">联系我</a></li>
+				</ul>
+			
+			
+			</div>
+			
+		</section>
+					
+				
+			</div>
+		</div>
+		<div id="page_1" class="page"style="background: red;">
+			
+		</div>
+		<div id="page_2" class="page" style="background: blueviolet;">
+			
+		</div>
+		<div id="page_3" class="page" style="background: lightblue;">
+			
+		</div>
+		<div id="page_4" class="page" style="background: lightsteelblue;">
+		</div>
+		<!--蒙版-->
+		<div class="con_2">
+				<ul>
+					<li></li>
+					<li><span></span></li>
+					<li><span></span></li>
+					<li><span></span></li>
+					<li><span></span></li>
+					
+				</ul>
+			</div>
+		<div id="meng"></div>
+		<div id="bg">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+	</body>
+	<script src="js/index.js"></script>
+	<script type="text/javascript">
+		//全局	
+		var oBg=$("#bg")
+		var oBox=$("#bg div:lt(8)")
+		var oBox1=$("#bg div:eq(7)").nextAll()
+		
+		var iKey=1;
+		var iw=oBg.width();
+		var ih=oBg.height();
+		var dang=0;
+		var iKey2=true;
+		var timer=null;
+		//初始化
+		init1(oBg,oBox,oBox1)
+		$(".lines span").addClass("Animater")
+		liners($(".lines span"),$(".vertical"))
+		autoAnimate()
+		//两个要相关联
+		$("section:eq(1)").css("display","none");
+		$("#menu").click(function(){
+			//$("section:eq(0)").toggle("display")
+			clearTimeout(timer);
+			if($("section:eq(0)").css("display")!="none"){
+				$("section:eq(0)").css("display","none")
+				$("#nei").css({"width":"100%","margin-top":"0px","position":"absolute","top":"0px"})
+				$("#meng").css("opacity","0")
+				$("section:eq(1),.page").css("display","block")
+				
+			}else{
+				$("section:eq(0)").css("display","block")
+				$("#meng").css("opacity","0.8")
+				$("section:eq(1),.page").css("display","none")
+				$("#nei").css("margin-top","")
+				$("#meng").css("opacity","")
+			}
+		})
+		window.onresize=function(){
+			init1(oBg,oBox,oBox1)
+		}
+		$("#btn").click(function(){
+			clearTimeout(timer)
+			liners($(".lines span"),$(".vertical"))
+			dang++;
+			if(dang==6||dang==5){
+				dang=0
+			}
+			if(iKey){
+				iKey=0;
+				animationL(oBg,oBox,oBox1,dang)
+			}else{
+				iKey=1;
+				animationL(oBg,oBox1,oBox,dang)
+			}
+		})
+			$("#btn1").click(function(){
+				clearTimeout(timer)
+				liners($(".lines span"),$(".vertical"))
+				dang--;
+				if(dang==-1){
+					dang=5
+				}else if(dang==0){
+					dang=5
+				}
+				if(iKey){
+				iKey=0;
+				animationR(oBg,oBox,oBox1,dang)
+			}else{
+				iKey=1;
+				animationR(oBg,oBox1,oBox,dang)
+			}
+			})
+			
+		//点击菜单时事件rgba(6,25,85,0.5);
+		
+	</script>
+	
+</html>
+<!--选择器Nextall()-->
